@@ -1,0 +1,114 @@
+
+<style>
+  span
+  {
+    display:block;
+    text-align:left;
+  }
+</style>
+<section class="main-banner">
+  <div class="slider">
+    <div class="flexslider">
+      <ul class="slides">
+        <li style="height:200px">
+          <img src="/assets/img/banner-3.jpg" height="100" alt="">
+          <div class="caption">
+            <div class="container">
+              <h3>Join us & Explore</h3>
+              <h1>Thousands of Jobs</h1>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <ul class="search-form-area">
+      <li><i class="fa fa-search"></i></li>
+      <li>
+        <select #experience class="text-field-box">
+          <option selected>Select Experience</option>
+          <option value="1">1-2</option>
+          <option value="3">3-4</option>
+          <option value="5">5-6</option>
+          <option value="4">7-8</option>
+        </select>
+      </li>
+      <li>
+        <select #technology class="text-field-box">
+          <option selected>Select Technology</option>
+          <option value="1">Angular</option>
+        </select>
+      </li>
+      <li>
+        <select #location class="text-field-box">
+          <option selected>Select Locations</option>
+          <option value="1">Ahmedabad</option>
+          <option value="2">Baroda</option>
+          <option value="3">Pune</option>
+          <option value="4">Banglore</option>
+        </select>
+      </li>
+      <li><button class="button-medium" (click)="SearchJob(experience.value,technology.value,location.value)">Search</button></li>
+    </ul>
+  </div>
+</section>
+<section class="content-area-sec" style="border:1px solid green;">
+  <div class="container">
+    <div class="content-area">
+      <div class="content-area-jobs">
+        <div class="col-lg-12">
+          <div class="heading-dft">
+            <h4><span style="display:inline">Recent</span> Jobs</h4>
+          </div>
+          <!-- <div class="heading-dft"><h6>We found <span>30 </span>available job(s) for you</h6></div> -->
+          <ul class="jobs-details-sec">
+            <li *ngFor="let job of jobList" style="border: 1px solid gray;">
+              <a>
+                <div class="thumb-holder">
+                  <!--<img src="/assets/img/home-job-1.jpg" alt="">-->
+                </div>
+                <div class="info-box">
+
+                  <div class="title-div part-time">
+                    <h6>
+                      <span class="highlight"> {{job.JobTitle}} </span>
+                      
+                      <span style="margin-left:0px">
+                        {{job.JobCreateDate |date}}
+                      </span>
+
+                      <span class="highlight">
+                        {{job.SalaryRange}}
+                      </span>
+                    </h6>
+                  </div>
+                  <div class="full-div">
+
+                    <span>
+                      <em>
+                        {{job.CompanyName}}
+                      </em>
+                    </span>
+                    <span><i class="fa fa-map-marker"></i> {{job.CompanyWebsite}}</span>
+                    <span><i class="fa fa-calendar"></i> {{job.ContactNo}}</span>
+                    <span> <i class="fa fa-calendar"></i> {{job.ContactNo}} </span>
+                    <span>
+                      <i class="fa fa-calendar"></i> {{job.Email}}
+                    </span>
+                    <span class="highlight"><i class="fa fa-bookmark"></i> {{job.City}}</span>
+
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <a class="button-large left" href="#">Load More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End:Jobs Area-->
+
+</section>

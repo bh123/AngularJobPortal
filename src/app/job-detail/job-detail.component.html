@@ -1,0 +1,66 @@
+
+<section class="content-area-sec">
+  <div class="container" *ngIf="job">
+    <div class="job-detailed-info-sec">
+      <div class="content-area d-lg-flex">
+        <div class="col-lg-8 left-sec">
+          <div class="company-detail">
+            <div class="logo">
+              <img src="/assets/img/job-main-1.jpg" alt="">
+            </div>
+            <div class="title">
+              <p><i class="fa fa-link"></i> Wisit Our Website</p>
+              <p><i class="fa fa-link"></i> {{job?.companyWebsite}}</p>
+            </div>
+          </div>
+          <div class="tab-container">
+            <h6 class="tab-heading">Requirments</h6>
+            <div id="tab1" class="tab-content" style="border: 1px solid #ccc;">
+              <ul class="list-style-icon-hand">
+                <li>
+                  Must have minimum of 3 years experience running, maneuvering, driving, and navigating equipment
+                  such as bulldozer, excavators, rollers, and front-end loaders.
+                </li>
+                <li>Strongly prefer candidates with High School Diploma</li>
+                <li>Must be able to communicate with others to convey information effectively.</li>
+                <li>Must be accustomed to working outdoors with exposure to all weather conditions</li>
+                <li>
+                  Must be able to perform physical activities that require considerable use of your arms and legs
+                  and moving your whole body, such as climbing, lifting, balancing, walking, stooping, and handling of materials
+                </li>
+                <li>Must be knowledgeable of safety procedures and practices</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-4 right-sec">
+          <div class="job-overview-sec">
+            <div class="heading-dft"><h4>Job Overview</h4></div>
+            <div class="overview-box">
+              <ul class="overview-items">
+                <li>
+                  <span>Date Posted:</span>
+                  <p>{{job?.jobCreateDate |date}}</p>
+                </li>
+                <li>
+                  <span>Location:</span>
+                  <p>{{job?.city}},{{job?.country}}</p>
+                </li>
+                <li>
+                  <span>Job Title:</span>
+                  <p>{{job?.jobTitle}}</p>
+                </li>
+                <li>
+                  <span>Salary:</span>
+                  <p>{{job?.salaryRange}}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
